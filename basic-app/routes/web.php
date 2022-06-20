@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\Home\PortifolioController;
+
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Home\AboutController;
 
@@ -52,6 +54,15 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/all/multi/image', 'AllMultiImage')->name('all.multi.image');
     Route::get('/edit/multi/image/{id}', 'EditMultiImage')->name('edit.multi.image');
     Route::post('update/multi/image', 'UpdateImage')->name('update.multi.image');
+    Route::get('/delete/multi/image/{id}', 'DeleteMultiImage')->name('delete.multi.image');
+});
+
+Route::controller(PortifolioController::class)->group(function () {
+    Route::get('/all/portifolio', 'AllPortifolio')->name('all.portifolio');
+    Route::get('/add/portifolio', 'AddPortifolio')->name('add.portifolio');
+    Route::post('/store/portifolio', 'StorePortifolio')->name('store.porifolio');
+    Route::get('/edit/portifolio/{id}', 'EditPortifolio')->name('edit.portifolio');
+    Route::post('/update/portifolio', 'UpdatePortifolio')->name('update.porifolio');
 });
 
 
